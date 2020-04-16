@@ -85,8 +85,9 @@ class Simulation(object):
 
     def move(self, agent, triggers=[]):
 
-        if agent.status == Status.Death or (agent.status == Status.Infected \
-                                            and (agent.infected_status == InfectionSeverity.Hospitalization \
+        if agent.status == Status.Death or (agent.status == Status.Infected 
+                                            and (agent.infected_status == InfectionSeverity.Symptomatic 
+                                                 or agent.infected_status == InfectionSeverity.Hospitalization 
                                                  or agent.infected_status == InfectionSeverity.Severe)):
             return
 
@@ -125,6 +126,9 @@ class Simulation(object):
             teste_sub = np.random.random()
 
             if agent.infected_status == InfectionSeverity.Asymptomatic:
+                if age_symptomatic_probs[indice] > teste_sub:
+                    agent.infected_status = InfectionSeverity.Symptomatic
+            elif agent.infected_status == InfectionSeverity.Symptomatic:
                 if age_hospitalization_probs[indice] > teste_sub:
                     agent.infected_status = InfectionSeverity.Hospitalization
             elif agent.infected_status == InfectionSeverity.Hospitalization:
