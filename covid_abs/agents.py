@@ -13,6 +13,7 @@ class Status(Enum):
 
 class InfectionSeverity(Enum):
     Asymptomatic = 'a'
+    Symptomatic = 'y'
     Hospitalization = 'h'
     Severe = 'g'
 
