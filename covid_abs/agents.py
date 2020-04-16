@@ -27,6 +27,7 @@ class Agent(object):
     self.age = kwargs.get('age',0)
     self.social_stratum = kwargs.get('social_stratum',0)
     self.wealth = kwargs.get('wealth',0.0)
+    self.wearable = kwargs.get('wearable',False)
 
   def get_description(self):
     if self.status == Status.Infected:
