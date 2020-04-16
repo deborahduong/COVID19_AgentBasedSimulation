@@ -23,6 +23,7 @@ class Simulation(object):
         self.statistics = None
         self.triggers_simulation = kwargs.get("triggers_simulation", [])
         self.triggers_population = kwargs.get("triggers_population", [])
+        self.wearables_rate = kwargs.get("wearables_rate", 0.0)
 
     def get_population(self):
         return self.population
@@ -45,8 +46,9 @@ class Simulation(object):
         y = np.clip(int(self.height / 2 + (np.random.randn(1) * (self.height / 3))),
                     0, self.height)
         age = int(np.random.beta(2, 5, 1) * 100)
+        wearable = False if np.random() > wearables_rate else True
         social_stratum = int(np.random.rand(1) * 100 // 20)
-        self.population.append(Agent(x=x, y=y, age=age, status=status, social_stratum=social_stratum))
+        self.population.append(Agent(x=x, y=y, age=age, status=status, social_stratum=social_stratum, wearable=wearable))
 
     def initialize(self):
         # Initial infected population
