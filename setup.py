@@ -10,9 +10,9 @@ setuptools.setup(
     description='COVID-19 Agent Based Simulation',
     long_description='Agent Based Simulation of COVID-19 Health and Economical Effects',
     long_description_content_type="text/markdown",
-    author='Petronio Candido L. e Silva',
-    author_email='petronio.candido@gmail.com',
-    url='https://github.com/petroniocandido/COVID19_AgentBasedSimulation',
+    author='Deborah Duong adapted from Petronio Candido L. e Silva',
+    author_email='deborah@singularitynet.io, petronio.candido@gmail.com',
+    url='https://github.com/deborahduong/COVID19_AgentBasedSimulation',
     download_url='https://github.com/PYFTS/pyFTS/archive/pkg1.6.tar.gz',
     keywords=['covid19', 'simulation', 'agent based simulation'],
     classifiers=[
