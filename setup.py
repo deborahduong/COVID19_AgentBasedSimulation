@@ -6,7 +6,7 @@ import setuptools
 setuptools.setup(
     name='covid_abs',
     packages=['covid_abs'],
-    version='0.0.1',
+    version='0.0.42',
     description='COVID-19 Agent Based Simulation',
     long_description='Agent Based Simulation of COVID-19 Health and Economical Effects',
     long_description_content_type="text/markdown",
