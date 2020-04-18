@@ -48,7 +48,7 @@ class Simulation(object):
         age = int(np.random.beta(2, 5, 1) * 100)
         wearable = False if np.random.random() > self.wearables_rate else True
         social_stratum = int(np.random.rand(1) * 100 // 20)
-        self.population.append(Agent(x=x, y=y, age=age, status=status, social_stratum=social_stratum, wearable=wearable))
+        self.population.append(Agent(x=x, y=y, age=age, status=status, social_stratum=social_stratum, wearable=wearable, quarantined=False))
 
     def initialize(self):
         # Initial infected population
