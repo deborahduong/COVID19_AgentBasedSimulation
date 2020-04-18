@@ -46,7 +46,7 @@ class Simulation(object):
         y = np.clip(int(self.height / 2 + (np.random.randn(1) * (self.height / 3))),
                     0, self.height)
         age = int(np.random.beta(2, 5, 1) * 100)
-        wearable = False if np.random.random() > 0.0 else True #self.wearables_rate else True
+        wearable = False if 1.0 > self.wearables_rate else True #np.random.random()
         social_stratum = int(np.random.rand(1) * 100 // 20)
         self.population.append(Agent(x=x, y=y, age=age, status=status, social_stratum=social_stratum, wearable=wearable))
 
