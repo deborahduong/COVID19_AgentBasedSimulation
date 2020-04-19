@@ -19,11 +19,11 @@ def plot_mean_std(ax, mean, std, legend, color=None):
     ax.plot(mean, color, label=legend)
 
 
-def plot_batch_results(df):
+def plot_batch_results(df,title):
     metrics = df['Metric'].unique()
 
-    #health_metrics = [k for k in metrics if "Q" not in k ]
-    health_metrics = [k for k in metrics if "Q" not in k and "Asym" not in k]
+    health_metrics = [k for k in metrics if "Q" not in k ]
+    #health_metrics = [k for k in metrics if "Q" not in k and "Asym" not in k]
     ecom_metrics = [k for k in metrics if "Q" in k]
 
     fig, ax = plt.subplots(nrows=1, ncols=2, figsize=[20, 5])
@@ -56,10 +56,9 @@ def plot_batch_results(df):
       smax = np.max([smax, tmp])
       tmp = np.min(val)
       smin = np.min([smin, tmp])
-
-    ax[1].set_title('Average Economical Impact')
-    ax[1].set_xlabel("Nº of Days")
-    ax[1].set_ylabel("Wealth")
+    ax[1].set_title('Average Economical Impact '+ title)
+    ax[1].set_xlabel("Nº of Days "+title)
+    ax[1].set_ylabel("Wealth "+ title)
 
     for col in ecom_metrics:
       means = df[(df["Metric"] == col)]['Avg'].values
