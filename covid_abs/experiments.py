@@ -22,8 +22,8 @@ def plot_mean_std(ax, mean, std, legend, color=None):
 def plot_batch_results(df):
     metrics = df['Metric'].unique()
 
-    health_metrics = [k for k in metrics if "Q" not in k ]
-    #health_metrics = [k for k in metrics if "Q" not in k and "Asym" not in k]
+    #health_metrics = [k for k in metrics if "Q" not in k ]
+    health_metrics = [k for k in metrics if "Q" not in k and "Asym" not in k]
     ecom_metrics = [k for k in metrics if "Q" in k]
 
     fig, ax = plt.subplots(nrows=1, ncols=2, figsize=[20, 5])
