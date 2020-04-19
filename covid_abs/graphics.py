@@ -17,6 +17,10 @@ def color1(s):
         return 'lightblue'
     elif s == 'Infected':
         return 'gray'
+    elif s == 'Asymptomatic':
+        return 'yellow'
+    elif s == 'Symptomatic':
+        return 'green'
     elif s == 'Recovered_Immune':
         return 'lightgreen'
     elif s == 'Death':
