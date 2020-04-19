@@ -28,7 +28,7 @@ def plot_batch_results(df,title=""):
 
     fig, ax = plt.subplots(nrows=1, ncols=2, figsize=[20, 5])
 
-    ax[0].set_title('Average Contagion Evolution')
+    ax[0].set_title('Average Contagion Evolution '+title)
     ax[0].set_xlabel("Nº of Days")
     ax[0].set_ylabel("% of Population")
 
@@ -57,8 +57,8 @@ def plot_batch_results(df,title=""):
       tmp = np.min(val)
       smin = np.min([smin, tmp])
     ax[1].set_title('Average Economical Impact '+ title)
-    ax[1].set_xlabel("Nº of Days "+title)
-    ax[1].set_ylabel("Wealth "+ title)
+    ax[1].set_xlabel("Nº of Days")
+    ax[1].set_ylabel("Wealth")
 
     for col in ecom_metrics:
       means = df[(df["Metric"] == col)]['Avg'].values
