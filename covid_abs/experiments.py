@@ -19,7 +19,7 @@ def plot_mean_std(ax, mean, std, legend, color=None):
     ax.plot(mean, color, label=legend)
 
 
-def plot_batch_results(df,title):
+def plot_batch_results(df,title=""):
     metrics = df['Metric'].unique()
 
     health_metrics = [k for k in metrics if "Q" not in k ]
