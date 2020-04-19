@@ -35,6 +35,8 @@ def color2(agent):
     elif agent.status == Status.Infected:
         if agent.infected_status == InfectionSeverity.Asymptomatic:
             return 'gray'
+        elif agent.infected_status == InfectionSeverity.Symptomatic:
+            return 'yellow'
         elif agent.infected_status == InfectionSeverity.Hospitalization:
             return 'orange'
         else:
